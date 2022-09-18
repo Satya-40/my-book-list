@@ -1,0 +1,78 @@
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.box .information {
+    display: flex;
+    flex-direction: row;
+}
+
+.box .information .image{
+    margin: 2rem;
+    height: 200px;
+    width: 130px;
+    flex-direction: column;
+}
+
+.box .information .info{
+    display: flex;
+    flex-direction: column;
+}
+
+.box .information .info .title{
+    font-size: xx-large;
+}
+
+.box .information .info .authors{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;  
+}
+
+.box .information .info .authors .author {
+    font-size: xx-large;
+}
+
+
+.box .dropdown{
+    margin: 2% 2% 2% 2%;
+    width: 160px;
+    height:50px;
+    font-size: x-large;
+    background-color: #CED4DA;
+    border: 0px;
+    outline: 0px;
+    padding: 10px;
+    width: 20%;
+    
+}   
+
+@media only screen and (max-width: 500px) {
+    .box{
+        display: block;
+    }
+    .box .dropdown{
+        float: right;
+    }
+    .box .dropdown{
+        width: 150px;
+        margin: 5px;
+        font-size: smaller;
+    }       
+    .box .information .info .title{
+        font-size: large;
+    }
+    .box .information .image{
+        margin: 10px;
+        flex-direction: column;
+    }
+  }
+
+
+.box .dropdown:focus{
+    border: 1px;
+    border-color: #DEE2E6;
+}       

@@ -1,0 +1,21 @@
+.Navbar{
+    background-color: #343A40;
+    height: 5rem;
+}
+
+.Navbar button{
+    color: white;
+    font-size: x-large;
+    background-color: #343A40;
+    border: 0px;
+    padding: 1.5rem;
+}
+
+.Navbar button:hover{
+    background-color: #6C757D
+}
+
+.Navbar  .loginButton{
+    color: white;
+    float: right;
+}

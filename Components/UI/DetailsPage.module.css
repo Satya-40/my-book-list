@@ -1,0 +1,90 @@
+.box{
+    margin: 5% 10% 0% 10%;
+    background-color: #343A40;
+    padding: 25px;
+    border-radius: 15px;
+    color: #F8F9FA;
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    gap: 10px;
+}
+
+.box .ratings{
+    grid-row: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    margin: 0px 25px 0 25px;
+}
+
+.box .image{
+    height: 360px;
+    width: 240px;
+    margin: 10px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.box .genre{
+    grid-column-start: 2;
+    grid-row: 3;
+    padding: 15px;
+    margin-left: 10px;
+}
+
+.box .title{
+    width: 100%;
+    margin: 10px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    padding: 15px;
+}
+
+.box .authors{
+    margin: 10px;
+    grid-column: 2;
+    grid-row: 2;
+    padding: 15px;
+}
+
+.box .description{
+    grid-row: 5;
+    margin: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding: 15px;
+}
+
+.box .publisher{
+    margin: 10px;
+    grid-column: 3;
+    grid-row: 2;
+    padding: 15px;
+}
+
+.box .pageCount{
+    margin: 10px;
+    grid: 3,3;
+    padding: 15px;
+}
+
+.box .dropdown{
+    margin: 10px 30px 10px 45px;
+    width: 160px;
+    height:50px;
+    font-size: x-large;
+    grid-row: 3;
+    grid-column: 1;
+}
+@media only screen and (max-width: 1450px) {
+    .box {
+      display: block;
+    }
+    .box .dropdown{
+        margin: 0 auto 0 22px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .box {
+      margin: 5% 0 0% 0;
+    }
+  }
