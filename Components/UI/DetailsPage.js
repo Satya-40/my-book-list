@@ -49,7 +49,6 @@ const DetailsPage = (props) => {
             })}
           </div>
         </div>
-        {state?state:""}
         <select className={classes.dropdown} defaultValue={""} onChange={()=>onAddToListHandler(event.target.value)} >
           <option value="">Add to List</option>
           <option value="Reading">Reading</option>
