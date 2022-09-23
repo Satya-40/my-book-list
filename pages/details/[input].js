@@ -9,7 +9,7 @@ const Details = () => {
   const query = router.query.input;
 
   const get = useCallback(async () => {
-    const response = await fetch(`/api/Details/${router.query.input}`);
+    const response = await fetch(`/api/Details/${query}`);
     const responseData = await response.json();
     setResults(responseData);
   }, [query]);

@@ -1,17 +1,36 @@
-import React, { Fragment } from "react";
+import { useRouter } from "next/router";
+import React, { Fragment, useEffect, useState } from "react";
 import classes from "./DetailsPage.module.css";
+import { useSession } from "next-auth/react";
 
 const DetailsPage = (props) => {
   const input = props.data?.volumeInfo;
+  const router = useRouter()
+  const id = router.query.input
+  const { data: session } = useSession();
+  const user = session?.user.email
+  const username = user?.replace(".",",")
+
+  const onAddToListHandler=async(status) => {
+    console.log( user, id , status)
+
+    const response = await fetch(`/api/SendStatus`,{
+      method: 'POST',
+      body: JSON.stringify({username, id, status}),
+      headers:{'Content-Type':'application/json'}
+    })
+    const result =await response.json()
+    console.log({result})
+  }
+  
+  // console.log(props.title, state);
 
   return (
     <Fragment>
       <div className={classes.box}>
         <img
           src={
-            input?.imageLinks.large
-              ? input?.imageLinks.large
-              : input?.imageLinks.thumbnail
+            input?.imageLinks?.thumbnail
           }
           alt={input?.title}
           className={classes.image}
@@ -30,7 +49,8 @@ const DetailsPage = (props) => {
             })}
           </div>
         </div>
-        <select className={classes.dropdown}>
+        {state?state:""}
+        <select className={classes.dropdown} defaultValue={""} onChange={()=>onAddToListHandler(event.target.value)} >
           <option value="">Add to List</option>
           <option value="Reading">Reading</option>
           <option value="Plan to read">Plan to read</option>

@@ -8,7 +8,7 @@ const SearchBar = () => {
  
   const onSubmitHandler = (event) => {
     event.preventDefault()
-    router.push(`/search/q=${input.current.value}`)
+    router.push(`/search/${input.current.value}`)
   }
 
   return (
@@ -16,7 +16,7 @@ const SearchBar = () => {
       <form onSubmit={onSubmitHandler} className={classes.form}>
         <input
           ref={input}
-          defaultValue={router.query.input ? router.query.input.substr(2) : ""}
+          defaultValue={router.query.input}
           className={classes.input}
         />
       </form>

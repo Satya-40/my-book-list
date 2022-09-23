@@ -5,6 +5,12 @@
     width: 100%;
 }
 
+.dialog{
+    background-color: #ced4da95;
+    border: 0px;
+    color: aliceblue;
+}
+
 .box .information {
     display: flex;
     flex-direction: row;

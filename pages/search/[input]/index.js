@@ -10,7 +10,7 @@ const index = () => {
   return (
     <Fragment>
       <Head>
-        <title>{router.query.input ? router.query.input.substr(2) : ""}</title>
+        <title>{router.query.input}</title>
       </Head>
       <SearchBar  />
       <SearchResults  />

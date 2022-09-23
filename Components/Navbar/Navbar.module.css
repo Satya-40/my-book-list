@@ -19,3 +19,11 @@
     color: white;
     float: right;
 }
+
+.Navbar  .loginButton .image{
+    border-radius: 50px;
+    size:auto ;
+    height: 3.5rem;
+    margin: .75rem 30px 0px 0px;
+}
+

@@ -1,0 +1,36 @@
+.listItems{
+    margin: 0 10% 0 10%;
+    padding: 0px;
+}
+
+@media only screen and (max-width: 500px) {
+    .listItems{
+        margin: 0 0 0 0;
+        padding: 0px;
+    }
+  }
+
+.listItem{
+    display: block;
+    color: aliceblue;
+    background-color: #6C757D;
+    margin: 2% 0 2% 0;
+    list-style-type: none;
+    display: flex;
+}
+
+.listItem:hover{
+    background-color:#495057
+}
+
+.warning{
+    border-radius: 10px;
+    background-color:#6C757D ;
+    color:aliceblue ;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 60px;
+    text-align: center;
+    font-size: xx-large;
+    padding: 50px;
+}
