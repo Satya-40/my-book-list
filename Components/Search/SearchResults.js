@@ -1,4 +1,5 @@
 import { useSession } from "next-auth/react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useState } from "react";
 import BookItem from "../UI/BookItem";
@@ -35,6 +36,9 @@ const SearchResults = () => {
 
   return (
     <Fragment>
+      <Head>
+        <title>{query}</title>
+      </Head>
       <ul className={classes.listItems}>
         {results?.map((item) => {
           return (

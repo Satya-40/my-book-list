@@ -1,22 +1,14 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import React, { Fragment, useEffect, useState } from 'react'
-import SearchBar from '../../../Components/Search/SearchBar';
-import SearchResults from '../../../Components/Search/SearchResults';
+import React, { Fragment } from "react";
+import SearchBar from "../../../Components/Search/SearchBar";
+import SearchResults from "../../../Components/Search/SearchResults";
 
 const index = () => {
-  const router = useRouter()
-  
   return (
     <Fragment>
-      <Head>
-        <title>{router.query.input}</title>
-      </Head>
-      <SearchBar  />
-      <SearchResults  />
+      <SearchBar />
+      <SearchResults />
     </Fragment>
   );
 };
 
-
-export default index
+export default index;
