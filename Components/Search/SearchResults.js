@@ -12,10 +12,13 @@ const SearchResults = () => {
   const user = session?.user.email
   const username = user?.replace(".",",")
   const query = router.query.input
+  const [loading, setLoading] = useState(true)
   
 
   useEffect(() => {
     const get = async () => {
+      setLoading(true)
+      setResults([])
       const response = await fetch(`/api/Search`,{
       method: 'POST',
       body: JSON.stringify({username, query }),
@@ -26,6 +29,7 @@ const SearchResults = () => {
         return <h1>LOADING</h1>
       }
       setResults(responseData);
+      setLoading(false)
     };
 
     get();
@@ -39,6 +43,7 @@ const SearchResults = () => {
       <Head>
         <title>{query}</title>
       </Head>
+      {loading && <h1 className={classes.loading}>Loading...</h1>}
       <ul className={classes.listItems}>
         {results?.map((item) => {
           return (

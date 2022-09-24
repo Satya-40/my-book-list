@@ -9,12 +9,15 @@ const MyList = () => {
     const user = session?.user.email;
     const username = user?.replace(".", ",");
     const [input, setInput] = useState([]);
+    const [loading, setLoading] = useState(true)
   
   
     const get = async () => {
+      setLoading(true)
       const data = await fetch(`/api/GetMyList/${username}`);
       const dataRecieved = await data.json();
       setInput(dataRecieved);
+      setLoading(false)
     };
     useEffect(() => {
       get();
@@ -27,6 +30,7 @@ const MyList = () => {
         <Head>
           <title>My List</title>
         </Head>
+        {loading && <h1 className={classes.loading}>Loading...</h1>}
         {session &&
         <ul className={classes.listItems}>
         {input.map((element) => {
